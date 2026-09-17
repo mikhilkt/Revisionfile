@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d12" />
+  <title>Revisionfile · BI Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs" type="module"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">R</span><span>revision<span class="accent">file</span></span></a>
+    <div class="top-actions"><span class="sync-status"><i></i> local workspace</span><button class="icon-button" id="themeToggle" aria-label="Toggle contrast">◐</button></div>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div><p class="eyebrow">BI NOTES / REVISION SPACE</p><h1>Make your notes<br><em>rememberable.</em></h1><p class="hero-copy">Drop in your notes. Revisionfile turns every PDF into a focused reading space and a fresh challenge set.</p></div>
+      <div class="hero-stats"><div><strong id="fileCount">0</strong><span>PDFs indexed</span></div><div><strong id="sectionCount">0</strong><span>sections ready</span></div></div>
+    </section>
+    <section class="workspace">
+      <aside class="sidebar">
+        <div class="sidebar-head"><span>YOUR MATERIAL</span><button id="addButton" class="plus" title="Add folder">+</button></div>
+        <label class="dropzone" id="dropzone" for="folderInput"><span class="upload-icon">↥</span><strong>Add BI notes folder</strong><small>Choose a folder · PDFs are kept local</small><input id="folderInput" type="file" webkitdirectory directory multiple accept="application/pdf,.pdf" /></label>
+        <div id="sectionNav" class="section-nav"><div class="empty-nav">Your sections will appear here.</div></div>
+        <div class="sidebar-foot"><span class="key">⌘ K</span><span>Quick navigation</span></div>
+      </aside>
+      <section class="content" id="content">
+        <div class="welcome" id="welcome"><div class="welcome-orbit"><span>✦</span></div><p class="eyebrow">WELCOME TO YOUR WORKSPACE</p><h2>A calmer way to<br><em>learn deeply.</em></h2><p>Select a folder containing your BI notes to build your revision space. Every subfolder becomes a section automatically.</p><button class="primary" id="welcomeAdd">Choose notes folder <span>→</span></button></div>
+        <div class="reader hidden" id="reader">
+          <div class="reader-head"><div><p class="eyebrow" id="sectionLabel">SECTION</p><h2 id="fileTitle">Select a PDF</h2></div><div class="reader-actions"><button class="soft-button" id="quizButton">✦ Generate quiz</button><button class="soft-button" id="openButton">↗ Open PDF</button></div></div>
+          <div class="reader-grid"><div class="pdf-card"><iframe id="pdfFrame" title="PDF preview"></iframe><div class="pdf-placeholder" id="pdfPlaceholder">Loading document…</div></div><aside class="quiz-panel" id="quizPanel"><div class="quiz-intro"><span class="quiz-spark">✦</span><p class="eyebrow">ACTIVE RECALL</p><h3>Ready when<br>you are.</h3><p>Open a quiz for this PDF. Ten questions will be freshly generated from its content every time.</p><button class="primary full" id="startQuiz">Start challenge <span>→</span></button></div></aside></div>
+          <div class="progress-row"><span id="pageMeta">PDF READER</span><span id="progressMeta">Fresh questions on every open</span></div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <div class="toast" id="toast"></div>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
